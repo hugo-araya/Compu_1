@@ -1,11 +1,11 @@
 def lectura_datos(nombre_archivo):
     ent = open(nombre_archivo)
-    nombre = ent.readline()
-    nombre = nombre.rstrip('\n')
-    apellido = ent.readline()
-    apellido = apellido.rstrip('\n')
-    ingreso = ent.readline()
-    ingreso = ingreso.rstrip('\n')
+    linea = ent.readline()
+    linea = linea.rstrip('\n')
+    lista = linea.split(' ')
+    nombre = lista[0]
+    apellido = lista[1]
+    ingreso = lista[2]
     return nombre, apellido, ingreso
 
 def proceso(nombre, apellido, ingreso):

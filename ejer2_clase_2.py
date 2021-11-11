@@ -1,6 +1,11 @@
-def lectura_datos():
-    lista = [9,8,72,22,21,81,2,1,11,76,32,54]
-    return lista
+def lectura_datos(archivo_datos):
+    ent = open(archivo_datos)
+    linea = ent.readline().rstrip('\n')
+    lista = linea.split(',')
+    lista1 = []
+    for elem in lista:
+        lista1.append(int(elem))
+    return lista1
 
 def proceso(lista):
     mayor = lista[0]
@@ -13,7 +18,7 @@ def salida_dato(salida):
     print ('El mayor es: ', salida)
 
 if __name__ == '__main__':
-    lista = lectura_datos()
+    lista = lectura_datos('datos_ejer2.txt')
     salida = proceso(lista)
     salida_dato(salida)
 
